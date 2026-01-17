@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= page.title ? page.title + ' | ' : '' %><%= config.title %></title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  
+  <!-- Fallback for Libertinus if not locally available: using a similar Serif from Google Fonts for web consistency if needed, but defining the preferred stack -->
+  <!-- Note: We are prioritizing the user request for Libertinus Serif Display. -->
+
+  <link rel="stylesheet" href="<%- url_for('css/style.css') %>">
+</head>
+<body>
+  <div class="container">
+    <%- body %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<div class="split-screen post">
+    <% var coverImage=theme.default_post_image; if (page.photos && page.photos.length) { coverImage=page.photos[0]; }
+        else if (page.cover) { coverImage=page.cover; } %>
+        <div class="left-pane" style="background-image: url('<%= coverImage %>');">
+            <div class="post-header-overlay">
+                <h1 class="article-title">
+                    <%= page.title %>
+                </h1>
+            </div>
+        </div>
+        <div class="right-pane article-content-wrapper">
+            <div class="article-content">
+                <%- page.content %>
+            </div>
+            <div class="article-nav">
+                <a href="<%- url_for('/') %>">← Retour à l'accueil</a>
+            </div>
+        </div>
+</div>

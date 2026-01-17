@@ -1,0 +1,12 @@
+# Apex Theme Configuration
+menu:
+  Home: /
+  Archives: /archives
+
+# Default images
+default_home_image: /img/apex.jpg
+default_post_image: https://images.unsplash.com/photo-1507842217121-9eac5c2ef028?q=80&w=2070&auto=format&fit=crop
+
+# Fonts
+font_heading: "'Noto Serif Display', serif"
+font_body: "'Libertinus Serif Display', 'Times New Roman', serif"

@@ -1,0 +1,29 @@
+<div class="split-screen home">
+    <div class="left-pane" style="background-image: url('<%= theme.default_home_image %>');">
+        <!-- Optional: Site Title overlay if desired, but request said just large image -->
+    </div>
+    <div class="right-pane">
+        <div class="post-list">
+            <% page.posts.each(function(post) { %>
+                <article class="post-card">
+                    <a href="<%- url_for(post.path) %>" class="post-link">
+                        <div class="card-image">
+                            <% if(post.photos && post.photos.length){ %>
+                                <img src="<%= post.photos[0] %>" alt="<%= post.title %>">
+                                <% } else if (post.cover) { %>
+                                    <img src="<%= post.cover %>" alt="<%= post.title %>">
+                                    <% } else { %>
+                                        <img src="<%= theme.default_post_image %>" alt="<%= post.title %>">
+                                        <% } %>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="post-title">
+                                <%= post.title %>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                <% }) %>
+        </div>
+    </div>
+</div>
