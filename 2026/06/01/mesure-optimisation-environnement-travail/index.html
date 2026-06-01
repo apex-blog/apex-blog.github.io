@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Mesure et optimisation des conditions de l’environnement de travail | 
+      Hexo
+  </title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,300..900;1,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Fallback for Libertinus if not locally available: using a similar Serif from Google Fonts for web consistency if needed, but defining the preferred stack -->
+  <!-- Note: We are prioritizing the user request for Libertinus Serif Display. -->
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div class="container">
+    <div class="split-screen post">
+    
+        <div class="left-pane" style="background-image: url('/2026/06/01/mesure-optimisation-environnement-travail/image1.jpeg');">
+            <a href="/">
+                <img src="/img/logo-apex.png" class="home-logo" alt="Apex Home">
+            </a>
+            <div class="post-header-overlay">
+                <div class="post-tags">
+                    
+                        
+                            <span class="tag-pill">
+                                Projets
+                            </span>
+                            
+                            <span class="tag-pill">
+                                Qualité de l&#39;air
+                            </span>
+                            
+                            <span class="tag-pill">
+                                ESP32
+                            </span>
+                            
+                                
+                </div>
+                <h1 class="article-title">
+                    Mesure et optimisation des conditions de l’environnement de travail
+                </h1>
+            </div>
+        </div>
+        <div class="right-pane article-content-wrapper">
+            <div class="article-content">
+                <h1 class="article-title-right">
+                    Mesure et optimisation des conditions de l’environnement de travail
+                </h1>
+                <h2 id="Contexte-et-enjeux-de-la-qualite-de-l’air-interieur">Contexte et enjeux de la qualité de l’air intérieur</h2>
+<p>Ces dernières années, de nombreuses recherches ont mis en évidence que l’augmentation des concentrations de CO₂ dans les salles de classe réduit les performances cognitives et scolaires des élèves. Autrement dit, un air mal renouvelé peut réellement freiner la capacité d’attention, la mémoire de travail et la prise de décision des étudiants.</p>
+<p>Face à ce constat, plusieurs initiatives publiques ont vu le jour. L’ADEME, à travers le programme Ecol’air, propose des fiches pratiques pour aider les écoles à améliorer leur qualité d’air intérieur. De plus, le nouveau dispositif national de surveillance impose désormais une évaluation annuelle des moyens d’aération, incluant la mesure directe du CO₂ dans les salles recevant du public. Ces mesures devraient contribuer à une meilleure prise en compte de l’environnement intérieur dans les établissements scolaires.</p>
+<p>Cependant, les études existantes sont hétérogènes, et les mécanismes précis restent partiellement compris. Pour progresser, il devient nécessaire de collecter davantage de données en intégrant l’ensemble des paramètres d’ambiance intérieure : CO₂, renouvellement d’air, confort thermique, luminosité, humidité relative, et même certains polluants extérieurs.</p>
+<p><img src="/2026/06/01/mesure-optimisation-environnement-travail/image1.jpeg" alt=""><br>
+<em>Prototype de boîtier de mesure de l’environnement de travail.</em></p>
+<h2 id="Notre-solution-un-module-de-mesure-tout-en-un">Notre solution : un module de mesure tout-en-un</h2>
+<p>Notre projet a pour objectif de fournir un module tout-en-un capable d’évaluer et de maîtriser ces différents paramètres. Il repose sur l’utilisation d’un microcontrôleur <strong>ESP32</strong> chargé de recevoir les données de plusieurs capteurs, puis de les envoyer à notre base de données via WiFi.</p>
+<p>Nous avons choisi :</p>
+<ul>
+<li>Le capteur <strong>SCD40</strong> pour mesurer la concentration de CO₂, l’humidité et la température.</li>
+<li>Le capteur <strong>KY018</strong> pour évaluer la luminosité de l’environnement de travail.</li>
+</ul>
+<p>Nous avons également fait le choix d’effectuer une mesure par minute afin de suivre l’évolution des paramètres influencés par les occupants, comme la concentration de CO₂, la température et l’humidité. L’ensemble est protégé par un boîtier compact, simple à transporter et pensé pour un usage quotidien.</p>
+<h2 id="Perspectives-industrielles">Perspectives industrielles</h2>
+<p>Ce prototype peut aussi être pertinent pour optimiser l’environnement de travail dans les bureaux ou les salles de réunion d’une entreprise, afin d’améliorer la productivité et l’attention des collaborateurs. On peut imaginer l’intégrer à un bâtiment intelligent, capable de réguler automatiquement les conditions de l’environnement intérieur pour garantir un confort optimal en permanence.</p>
+
+            </div>
+            
+                <div class="article-author-block">
+                    
+                        
+                                <div class="article-author">
+                                    <p>Écrit par <a href="/author/Florent%20Pinheiro%20&%20Romain%20Urxu"><strong>
+                                                Florent Pinheiro &amp; Romain Urxu
+                                            </strong></a></p>
+                                </div>
+                                
+                </div>
+                
+                    <div class="article-nav">
+                        <a href="/">← Retour à l'accueil</a>
+                    </div>
+        </div>
+</div>
+
+      <!-- Search Button & Modal -->
+      <div class="search-trigger" onclick="toggleSearch()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
+
+      <div id="search-overlay" class="search-overlay">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+          <div id="search-results"></div>
+          <button class="close-search" onclick="toggleSearch()">×</button>
+        </div>
+      </div>
+
+      <script src="/js/search.js"></script>
+
+  </div>
+</body>
+
+</html>

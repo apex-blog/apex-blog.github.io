@@ -1,0 +1,515 @@
+/* Reset & Base */
+:root {
+    --font-heading: 'Arimo', sans-serif;
+    --font-heading-article: 'Noto Serif Display', serif;
+    --font-body: 'Old Standard TT', serif;
+    --color-bg: #ffffff;
+    --color-text: #222222;
+    --color-accent: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 17pt;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+    overflow: hidden;
+    /* Prevent body scroll, handle in panes */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* Layout: Split Screen */
+.split-screen {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+/* Magazine Binding Effect (Spine) - Replaced with Inset Shadows on Panes for better positioning */
+/* See .left-pane and .right-pane box-shadows */
+
+.left-pane,
+.right-pane {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.left-pane {
+    background-color: #f0f0f0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* Spine shadow on the right edge (inner) */
+    box-shadow: inset -15px 0 20px -10px rgba(0, 0, 0, 0.5);
+}
+
+.left-pane::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* Scanlines */
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+.home-logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 20;
+    width: 120px;
+    height: auto;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.home-logo:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.right-pane {
+    background-color: #fff;
+    overflow-y: auto;
+    padding: 40px;
+    /* Spine shadow on the left edge (inner) */
+    box-shadow: inset 15px 0 20px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Home Page */
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 20px;
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    /* Optional rounded corners */
+    overflow: hidden;
+    /* minimalist card, maybe no shadow until hover, or just simple layout */
+}
+
+.post-card .card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.post-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.post-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.post-card .card-content {
+    padding: 20px 0;
+}
+
+.post-card .post-title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Post Page */
+.post .left-pane {
+    /* Image is set inline */
+}
+
+.post-header-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 60px 40px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.post-header-overlay .article-title {
+    color: white;
+    font-size: 2.2rem;
+    /* Reduced from 3.5rem */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.article-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 0 20px 0; /* Removed top padding, kept bottom padding */
+    font-size: 1.1rem;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+    font-family: var(--font-heading-article);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+}
+
+.article-title {
+    font-family: var(--font-heading);
+}
+
+.article-content p {
+    margin-bottom: 1.5em;
+    text-align: justify;
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2em auto;
+    border-radius: 8px;
+}
+
+.article-content strong,
+.article-content b {
+    color: #444;
+    /* Lighten the visual weight of the heavy bold font */
+    font-weight: 700;
+}
+
+.article-content hr {
+    margin: 3em 0;
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.article-nav {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .split-screen {
+        flex-direction: column;
+        height: auto;
+        /* Allow scroll on mobile */
+    }
+
+    .left-pane {
+        height: 50vh;
+        /* Half screen height for mobile header */
+        flex: none;
+    }
+
+    .right-pane {
+        height: auto;
+        flex: none;
+        overflow: visible;
+    }
+
+    body {
+        overflow: auto;
+    }
+
+    .post-header-overlay .article-title {
+        font-size: 2rem;
+        padding: 20px;
+    }
+
+    /* Disable vertical spine box-shadows on mobile */
+    .left-pane,
+    .right-pane {
+        box-shadow: none;
+    }
+}
+
+.article-author {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+    color: var(--color-accent);
+    text-align: right;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    max-width: 800px;
+
+    margin-right: auto;
+}
+
+/* Article Title in Right Pane */
+.article-title-right {
+    font-family: var(--font-heading-article);
+    font-size: 2.5rem;
+    margin-top: 0 !important;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    color: var(--color-text);
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    max-width: 100%;
+    /* Restored to full width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Author Block (Rich) */
+.article-author-block {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    max-width: 800px;
+    margin: 60px auto 30px;
+}
+
+.author-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #eee;
+}
+
+.author-info {
+    flex: 1;
+}
+
+.written-by {
+    font-family: var(--font-body);
+    margin-bottom: 5px !important;
+    font-style: italic;
+    font-size: 1rem;
+    color: #666;
+}
+
+.author-bio {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.4;
+    font-family: var(--font-body);
+    margin-bottom: 0 !important;
+}
+
+/* Category List (Home) */
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.category-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.category-link {
+    display: block;
+    padding: 30px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-family: var(--font-heading);
+}
+
+.category-count {
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Post Tags */
+.post-tags {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tag-pill {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.3s;
+    font-family: var(--font-heading);
+}
+
+.tag-pill:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Search UI */
+.search-trigger {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 1000;
+    cursor: pointer;
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.search-trigger:hover {
+    transform: scale(1.1);
+}
+
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.search-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-container {
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+}
+
+#search-input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    font-size: 3rem;
+    font-family: var(--font-heading);
+    background: transparent;
+    padding: 20px 0;
+    outline: none;
+}
+
+.close-search {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #999;
+}
+
+/* Category Page Specifics */
+.category-page .post-card {
+    margin-bottom: 30px;
+    /* List view style for category page if desired, simplified version of home card */
+}
+
+.category-page .post-date {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Video Container Responsive */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    margin: 2em auto;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}

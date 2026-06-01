@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    mediocosmos | 
+      Hexo
+  </title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,300..900;1,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Fallback for Libertinus if not locally available: using a similar Serif from Google Fonts for web consistency if needed, but defining the preferred stack -->
+  <!-- Note: We are prioritizing the user request for Libertinus Serif Display. -->
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div class="container">
+    <div class="split-screen post">
+    
+        <div class="left-pane" style="background-image: url('/2026/04/06/mediocosmos/cover.jpg');">
+            <a href="/">
+                <img src="/img/logo-apex.png" class="home-logo" alt="Apex Home">
+            </a>
+            <div class="post-header-overlay">
+                <div class="post-tags">
+                    
+                        
+                            <span class="tag-pill">
+                                Apex
+                            </span>
+                            
+                            <span class="tag-pill">
+                                Biomimétisme
+                            </span>
+                            
+                            <span class="tag-pill">
+                                Vidéo mapping
+                            </span>
+                            
+                            <span class="tag-pill">
+                                Artefact
+                            </span>
+                            
+                                
+                </div>
+                <h1 class="article-title">
+                    mediocosmos
+                </h1>
+            </div>
+        </div>
+        <div class="right-pane article-content-wrapper">
+            <div class="article-content">
+                <h1 class="article-title-right">
+                    mediocosmos
+                </h1>
+                <p>Durant deux semaines, j’ai eu la chance de travailler sur la quête « Mediodcosmos » proposée par l’APEX de UniLaSalle, à Beauvais. Alliant esprit artistique, modélisation 3D et simulation de fluide, cette quête multi-domaine m’a permis de m’instruire et me former dans divers logiciels, tout en me permettant de laisser libre cours à mon imagination.</p>
+<p>Ces deux semaines ont été centrées autour d’une œuvre d’art réalisée par Sarah GARZONI en 2024. Cette sculpture en marbre de 200 x 245 cm est une réplique d’un nid observé lors d’une plongée en 2016, de Torquigener albomaculosus, un petit poisson globe vivant en eaux peu profondes des côtes japonaises. Durant la période de reproduction, les mâles de cette espèce passent plusieurs jours à façonner ces nids très graphiques pour attirer les femelles. Ce nid, de par sa forme, semble avoir la capacité de canaliser le courant, pour obtenir des conditions optimales de vitesse et d’oxygénation pour les œufs logeant au centre de la structure.</p>
+<p>Le but de ma quête était de créer une illustration à cette œuvre, quelque chose à projeter qui lui donnerait vie tout en montrant toutes les subtilités qui l’entourent.</p>
+<hr>
+<h2 id="Le-modele-3D">Le modèle 3D</h2>
+<p>La première étape de mon projet était de recréer un modèle réduit de la sculpture, celle-ci étant trop imposante et actuellement exposée à Sainte-Geneviève-des-Bois.</p>
+<p>Pour cela, l’important est de reprendre les mêmes données que l’artiste a utilisée pour son œuvre : celles du mystery circle K13, issus d’une plongé réalisée en 2016, publiées en 2022. Ces données, brutes, sont sous forme de nuage de points, obtenu par sfm (structure from motion). Une version retravaillée, sous forme de maillage est mis à disposition et m’a servie pour la suite.</p>
+<p>Une fois téléchargé sous format .stl, le fichier a été ouvert sur Blender pour être retravaillé : décimation du maillage, aplanissement des bordures et extrusion d’un volume à base plane. Le modèle 3D obtenu sert à l’impression finale.</p>
+<p>L’imprimante utilisée est la Bambu Lab X1 Carbon. En raison de la taille limitée du plateau, le modèle a été imprimé dans un format 22 x 22,8 x 2,4 cm, soit environ à échelle 1/10. Une hauteur de couche de 0,08 mm a été choisie pour conserver un maximum de détail. Pour minimiser l’utilisation de matière, le remplissage interne a été calibré à 10%. Pour éviter tout phénomène de warping (observé avec un modèle réduit réalisé en amont), une couche de laque a été appliquée sur le plateau. L’impression a utilisée environ 250 g de fil pour une durée de 16h.</p>
+<p>Le fil blanc se collant trop fortement au support, endommageant les pièces, j’ai dû privilégier l’utilisation de fil jaune pour l’impression. Afin de retrouver la couleur d’origine, le nid imprimé a été bombé en blanc mate en deux couches.</p>
+<p><img src="/2026/04/06/mediocosmos/b.jpeg" alt=""></p>
+<h2 id="Choix-du-projecteur">Choix du projecteur</h2>
+<p>La principale problématique liée au projecteur était la proximité entre celui-ci et la zone de projection (moins de 1 m), demandant un modèle à la distance focale faible. Finalement, c’est le Wolfang WP05 qui a été choisi. Pratique, bon marché, compacte et avec une distance focale courte, c’est un bon choix pour une projection dans une vitrine.</p>
+<h2 id="Simulation-de-fluide">Simulation de fluide</h2>
+<p>La principale caractéristique évoquée lorsque l’on parle de ce nid, c’est sa capacité à gérer les flux d’eau. C’est dans l’optique de trouver une façon de représenter cette propriété dans ma projection que j’ai essayé de faire des simulations de fluide, grâce au logiciel Fluent de Ansys Workbench.</p>
+<p>Pour commencer, j’ai essayé de faire des simulations en partant du modèle 3D que j’ai évoqué plus tôt.</p>
+<p>Tout d’abord en 2D, en important ce modèle 3D sur XGenerative Design. Une fois importé, un plan à été créer de sorte a coupé le modèle à la hauteur des dunes extérieures. La découpe de ce plan par les zones de croissement avec le modèle 3D a permis d’obtenir un objet utilisable sur Fluent. Cependant, sans doute en raison de la nature/format du modèle 3D, l’exportation semblait compromise : Fluent ne perçoit pas le plan, seulement le modèle 3D qui ne devrait pas avoir été exporter.</p>
+<p><img src="/2026/04/06/mediocosmos/a.jpeg" alt=""></p>
+<p>Ensuite, j’ai voulu essayer avec une simulation en 3D. Le premier essaie a été fait en reprenant le modèle 3D initial. Une fois importé sur Fluent et englobé pour créer la zone de simulation, la suite du processus est compromise par la difficulté du logiciel à identifier le nid comme étant un objet géométrique.</p>
+<p>Le second essaie a été fait en modifiant le modèle 3D de base, en créant le volume au-dessus du nid au lieu d’en dessous pour créer en amont la zone de simulation de fluide. Un allongement des côtés gauche et droit du modèle a été fait pour permettre au fluide de se stabilisés avant de rencontrer l’obstacle qu’est le nid. En raison de l’imperfection du maillage (petit trou, maille double, isolée, saillante …), il était nécessaire de le réparer et ainsi créer un solide exploitable sur Fluent. J’ai donc importé ce modèle 3D inversé sur Autodesk Fusion (Fusion 360) pour le réparer et convertir le maillage en solide. Cette réparation a cependant rendu les arrêtes du modèle arrondi avec du maillage, rendant la délimitation des rôles des faces (inlet, outlet, wall, symmetry) sur Fluent complexe. Les difficultés ont été rencontrées lors de l’étape de la Conception sur Fluent, durant laquelle le nid n’a plus été reconnu et des messages d’erreur empêchaient la poursuite de la simulation.</p>
+<p><img src="/2026/04/06/mediocosmos/b.jpeg" alt=""></p>
+<p><strong>J’ai donc dû me tourner vers des simulations à partir de modèles simplifiés paramétriques.</strong></p>
+<p>Le motif utilisé pour la modélisation de flux en 2D a été créer sur XGenerative Design, imitant l’emplacement des dunes extérieures. Ce motif a été soustrait à une esquisse rectangulaire créer sur Fluent pour créer une zone de simulation en 2D imitant la présence de dunes. Après avoir maillé le plan, une simulation de flux d’eau allant de gauche à droite à 5 m/s a été lancée. Des résultats satisfaisants ont pu être obtenu, sous forme de vecteur et de contour. Une autre simulation a été lancé pour fournir une vidéo des variations de vitesse de l’eau au cours du temps sous forme de contour.</p>
+<p><img src="/2026/04/06/mediocosmos/c.jpeg" alt=""><br>
+<img src="/2026/04/06/mediocosmos/d.jpeg" alt=""></p>
+<p>Pour la simulation en 3D, je me suis servie d’un modèle 3D paramétrique simplifié du nid créé l’année dernière sur XGenerative. Ce modèle a été soustrait à un volume pour créer une zone de simulation de flux. Ce volume modifier a été importé sur Fluent, maillé et utilisé pour une simulation. Les résultats ont pu être visualisés avec des contours, des vecteurs, des lignes de flux et le volume rendering. Aucune vidéo n’a pu être extraite.</p>
+<p><img src="/2026/04/06/mediocosmos/e.jpeg" alt=""><br>
+<img src="/2026/04/06/mediocosmos/f.jpeg" alt=""></p>
+<h2 id="Elaboration-du-visuel">Elaboration du visuel</h2>
+<p>Dans la représentation visuelle, j’ai voulu combiner un aspect artistique, un rappel du naturel et la géométrie du nid dans une suite de séquence. Le montage de la vidéo a été fait sur Capcut. La vidéo est une boucle de 1min 10sec.</p>
+<p><img src="/2026/04/06/mediocosmos/g.jpeg" alt=""></p>
+<p>Bien que la distance focale du projecteur soit à environ 60 cm, l’image projeté est toujours plus grande que la zone sur laquelle on veut projetée, en plus d’être dans un format 16:9, 16:10 ou 4:3, alors qu’il faut un format 1:1. La vidéo doit ainsi être monté de sorte que cette zone « en trop » soit pris en compte.[Text Wrapping Break]</p>
+<p><img src="/2026/04/06/mediocosmos/h.jpeg" alt=""></p>
+<h2 id="Piste-d’evolution">Piste d’évolution</h2>
+<p>D’un point de vue artistique, de nombreuses autres séquences pourraient être imaginées, faisant référence au nom Torquigener albomaculosus (tâche blanche) ou à son origine japonaise par exemple. L’élaboration d’une piste audio permettrait une immersion d’autant plus importante de l’observateur.</p>
+<p>Les simulations de flux utilisées actuellement sont imparfaites et mériteraient d’être retravaillées. La principale amélioration serait de faire fonctionner les modèles non-paramétriques, tout en réussissant à extraire des vidéos de la simulation. Ces simulations peuvent être sur Fluent à partir des modèle 2D et 3D, ou grâce à la depthmap avec du code Python ou Javascript, dont les résultats obtenus jusqu’à présent n’ont pas été concluant.</p>
+<p>On pourrait également imaginer un visuel interactif, qui utiliserait les mouvements des visiteurs pour déterminer le sens du courant.</p>
+<hr>
+<p>=&gt; <a target="_blank" rel="noopener" href="https://www.instagram.com/reels/DWqyDSSIFr2/">https://www.instagram.com/reels/DWqyDSSIFr2/</a></p>
+
+            </div>
+            
+                <div class="article-author-block">
+                    
+                        
+                                <div class="article-author">
+                                    <p>Écrit par <a href="/author/Laurine%20Jean"><strong>
+                                                Laurine Jean
+                                            </strong></a></p>
+                                </div>
+                                
+                </div>
+                
+                    <div class="article-nav">
+                        <a href="/">← Retour à l'accueil</a>
+                    </div>
+        </div>
+</div>
+
+      <!-- Search Button & Modal -->
+      <div class="search-trigger" onclick="toggleSearch()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
+
+      <div id="search-overlay" class="search-overlay">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+          <div id="search-results"></div>
+          <button class="close-search" onclick="toggleSearch()">×</button>
+        </div>
+      </div>
+
+      <script src="/js/search.js"></script>
+
+  </div>
+</body>
+
+</html>

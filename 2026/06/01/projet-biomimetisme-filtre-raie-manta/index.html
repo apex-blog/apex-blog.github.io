@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Projet de Biomimétisme : le filtre de la raie manta | 
+      Hexo
+  </title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,300..900;1,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Fallback for Libertinus if not locally available: using a similar Serif from Google Fonts for web consistency if needed, but defining the preferred stack -->
+  <!-- Note: We are prioritizing the user request for Libertinus Serif Display. -->
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div class="container">
+    <div class="split-screen post">
+    
+        <div class="left-pane" style="background-image: url('/2026/06/01/projet-biomimetisme-filtre-raie-manta/image2.jpeg');">
+            <a href="/">
+                <img src="/img/logo-apex.png" class="home-logo" alt="Apex Home">
+            </a>
+            <div class="post-header-overlay">
+                <div class="post-tags">
+                    
+                        
+                            <span class="tag-pill">
+                                Biomimétisme
+                            </span>
+                            
+                            <span class="tag-pill">
+                                Projets
+                            </span>
+                            
+                                
+                </div>
+                <h1 class="article-title">
+                    Projet de Biomimétisme : le filtre de la raie manta
+                </h1>
+            </div>
+        </div>
+        <div class="right-pane article-content-wrapper">
+            <div class="article-content">
+                <h1 class="article-title-right">
+                    Projet de Biomimétisme : le filtre de la raie manta
+                </h1>
+                <p><em>Projet réalisé dans le cadre de la Mineure Numérique (Année 2025-2026).</em><br>
+<em>Référent : Maxime Denis</em></p>
+<hr>
+<h2 id="Introduction">Introduction</h2>
+<p>Ce projet vise à explorer de nouvelles méthodes de filtration par biomimétisme (bio-inspiration). Dans ce cadre, nous nous sommes inspirés du système de filtration utilisé par la raie Manta pour se nourrir. Contrairement aux filtres industriels classiques, ce système ne se colmate pas grâce à son mode de fonctionnement particulier. L’objectif est ainsi de pouvoir améliorer certains procédés industriels en s’inspirant du mécanisme de la raie Manta.</p>
+<p><img src="/2026/06/01/projet-biomimetisme-filtre-raie-manta/image2.jpeg" alt=""><br>
+<em>La raie Manta, source d’inspiration pour une filtration sans colmatage.</em></p>
+<h2 id="Fonctionnement-du-modele-biologique">Fonctionnement du modèle biologique</h2>
+<p>La raie manta filtre l’eau grâce à des structures spécialisées dans ses branchies pour se nourrir de zooplancton. Grâce à un mécanisme de filtration par ricochet, des vortex (petits tourbillons d’eau) se forment et empêchent les particules de traverser les pores du filtre : même plus petites, elles sont déviées et renvoyées vers le flux principal pour atteindre l’œsophage de la raie. Ce système permet à la fois de capturer de très petites particules et d’éviter le colmatage des filtres.</p>
+<h2 id="Modelisation-3D-et-creation-du-modele">Modélisation 3D et création du modèle</h2>
+<p>Pour créer notre modèle 3D, nous avons d’abord identifié les paramètres clés : la forme des pales, leur espacement, leur orientation et la longueur du filtre. Dans notre étude, nous nous sommes concentrés sur deux paramètres principaux : l’espacement et l’orientation.</p>
+<p>La modélisation a été réalisée sur la plateforme <strong>3DEXPERIENCE</strong>. Nous avons d’abord conçu une pale, puis nous l’avons dupliquée en les répartissant le long d’une droite selon l’écartement choisi, afin de former le filtre. Ensuite, ce filtre a été soustrait d’un volume plein qui l’englobe, pour ne conserver que l’espace de circulation de l’eau (le domaine fluide), ce qui permet de mieux contrôler l’écoulement.</p>
+<p>La modélisation 2D a ensuite été réalisée à partir du modèle 3D en effectuant une section longitudinale, à l’aide de l’outil « Extremum », après chaque modification des paramètres.</p>
+<p><img src="/2026/06/01/projet-biomimetisme-filtre-raie-manta/image3.png" alt=""><br>
+<em>Modélisation 3D des pales du filtre inspiré de la raie Manta.</em></p>
+<p><img src="/2026/06/01/projet-biomimetisme-filtre-raie-manta/image4.png" alt=""><br>
+<em>Vue détaillée de la géométrie et de l’assemblage des pales de filtration.</em></p>
+<h2 id="Simulation-et-resultats">Simulation et résultats</h2>
+<p>La simulation a été réalisée sur <strong>ANSYS Fluent</strong> en utilisant de l’eau comme fluide. Nous avons testé notre modèle avec une vitesse d’entrée de 550 mm/s (proche de celle de la raie manta). L’objectif était de reproduire les phénomènes de ricochet et de formation de vortex.</p>
+<p>En simulation 3D, les résultats obtenus ne sont pas entièrement satisfaisants : un phénomène de ricochet est observé, mais aucun vortex n’apparaît. En revanche, le modèle 2D met bien en évidence le fonctionnement attendu, ce qui suggère que les écarts proviennent probablement des paramètres de simulation.</p>
+<p><img src="/2026/06/01/projet-biomimetisme-filtre-raie-manta/image5.png" alt=""><br>
+<em>Simulation des flux et contours de vitesse au passage des pales.</em></p>
+<p><img src="/2026/06/01/projet-biomimetisme-filtre-raie-manta/image6.png" alt=""><br>
+<em>Mise en évidence de la formation des vortex et de l’écoulement fluide.</em></p>
+<h2 id="Usage-industriel-envisage">Usage industriel envisagé</h2>
+<p>Ce système pourrait être appliqué dans plusieurs domaines :</p>
+<ul>
+<li><strong>Industrie agroalimentaire</strong> : notamment en ultrafiltration. Placé en amont d’autres filtres, il permettrait d’augmenter significativement leur durée de vie.</li>
+<li><strong>Domaine biomédical</strong> : il pourrait être intégré dans un appareil de dialyse portable, en amont du dialyseur, afin de dévier les particules sanguines et de limiter leur accumulation sur la membrane dialysante.</li>
+</ul>
+<h2 id="Pour-aller-plus-loin">Pour aller plus loin</h2>
+<p>Pour aller plus loin, il serait nécessaire de développer plusieurs modèles 3D de complexité croissante afin de comparer les géométries et affiner les paramètres de simulation. Des tests numériques puis expérimentaux permettraient ensuite d’évaluer les performances et d’identifier les limites du modèle.</p>
+
+            </div>
+            
+                <div class="article-author-block">
+                    
+                        
+                                <div class="article-author">
+                                    <p>Écrit par <a href="/author/Aya%20Ben%20Ammar%20&%20Gr%C3%A9goire%20de%20Lumley-Woodyear"><strong>
+                                                Aya Ben Ammar &amp; Grégoire de Lumley-Woodyear
+                                            </strong></a></p>
+                                </div>
+                                
+                </div>
+                
+                    <div class="article-nav">
+                        <a href="/">← Retour à l'accueil</a>
+                    </div>
+        </div>
+</div>
+
+      <!-- Search Button & Modal -->
+      <div class="search-trigger" onclick="toggleSearch()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
+
+      <div id="search-overlay" class="search-overlay">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+          <div id="search-results"></div>
+          <button class="close-search" onclick="toggleSearch()">×</button>
+        </div>
+      </div>
+
+      <script src="/js/search.js"></script>
+
+  </div>
+</body>
+
+</html>

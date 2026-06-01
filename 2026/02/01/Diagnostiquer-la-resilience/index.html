@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Télédétection &amp; Agroécologie | 
+      Hexo
+  </title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,300..900;1,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Fallback for Libertinus if not locally available: using a similar Serif from Google Fonts for web consistency if needed, but defining the preferred stack -->
+  <!-- Note: We are prioritizing the user request for Libertinus Serif Display. -->
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div class="container">
+    <div class="split-screen post">
+    
+        <div class="left-pane" style="background-image: url('/2026/02/01/Diagnostiquer-la-resilience/bva.jpg');">
+            <a href="/">
+                <img src="/img/logo-apex.png" class="home-logo" alt="Apex Home">
+            </a>
+            <div class="post-header-overlay">
+                <div class="post-tags">
+                    
+                        
+                            <span class="tag-pill">
+                                Télédétection
+                            </span>
+                            
+                            <span class="tag-pill">
+                                Agroécologie
+                            </span>
+                            
+                                
+                </div>
+                <h1 class="article-title">
+                    Télédétection &amp; Agroécologie
+                </h1>
+            </div>
+        </div>
+        <div class="right-pane article-content-wrapper">
+            <div class="article-content">
+                <h1 class="article-title-right">
+                    Télédétection &amp; Agroécologie
+                </h1>
+                <h2 id="Diagnostiquer-la-resilience-du-bocage-depuis-l’espace">Diagnostiquer la résilience du bocage depuis l’espace</h2>
+<p>Comment transformer des pixels satellites en outil d’aide à la décision pour l’agroécologie ?<br>
+C’est la question centrale qui a guidé mon projet de fin de mineure au sein de l’APEX. L’objectif n’était pas seulement de cartographier la végétation de Beauvais, mais de qualifier précisément la fonctionnalité écologique du maillage bocager face aux risques d’érosion et de perte de biodiversité.</p>
+<h2 id="La-demarche-technique">La démarche technique</h2>
+<p>Plutôt que de s’appuyer sur des bases de données classiques, j’ai développé une chaîne de traitement automatisée sur des images Sentinel-2. J’ai conçu un algorithme de “Score Bio” multicritère intégrant :</p>
+<ul>
+<li>L’indice VARI (Visible Atmospheric Resistant Index) pour mesurer la vigueur de la biomasse.</li>
+<li>L’indice de Patton pour distinguer morphologiquement les corridors (haies) des réservoirs.</li>
+</ul>
+<p>L’analyse de texture (écart-type) pour détecter les ruptures de continuité internes (haies dégradées).</p>
+<p><img src="/2026/02/01/Diagnostiquer-la-resilience/teledec.jpg" alt=""><br>
+<em>Cartographie des zones de rupture et de continuité écologique sur le parcellaire agricole de Beauvais.</em></p>
+<h2 id="Le-resultat">Le résultat</h2>
+<p>Plus qu’une carte, ce projet aboutit à un véritable indicateur de vulnérabilité parcellaire. Il permet de discriminer les zones de “désert écologique” des réseaux fonctionnels, offrant ainsi un levier concret pour prioriser les actions de replantation et de restauration de la trame verte.</p>
+<h2 id="Remerciements">Remerciements</h2>
+<p>Un grand merci à Hamilton Araujo pour son accompagnement pédagogique et pour m’avoir poussé à aller au-delà de la cartographie classique vers l’analyse de la donnée et l’aide à la décision. Une pensée également pour Gauthier Renard, pour l’entraide et les échanges constructifs tout au long de nos projets respectifs.</p>
+
+            </div>
+            
+                    <div class="article-nav">
+                        <a href="/">← Retour à l'accueil</a>
+                    </div>
+        </div>
+</div>
+
+      <!-- Search Button & Modal -->
+      <div class="search-trigger" onclick="toggleSearch()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
+
+      <div id="search-overlay" class="search-overlay">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+          <div id="search-results"></div>
+          <button class="close-search" onclick="toggleSearch()">×</button>
+        </div>
+      </div>
+
+      <script src="/js/search.js"></script>
+
+  </div>
+</body>
+
+</html>

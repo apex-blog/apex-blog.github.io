@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Surveillance météo | 
+      Hexo
+  </title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,300..900;1,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Fallback for Libertinus if not locally available: using a similar Serif from Google Fonts for web consistency if needed, but defining the preferred stack -->
+  <!-- Note: We are prioritizing the user request for Libertinus Serif Display. -->
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div class="container">
+    <div class="split-screen post">
+    
+        <div class="left-pane" style="background-image: url('/2026/04/10/Surveillance-meteo/cover.jpg');">
+            <a href="/">
+                <img src="/img/logo-apex.png" class="home-logo" alt="Apex Home">
+            </a>
+            <div class="post-header-overlay">
+                <div class="post-tags">
+                    
+                        
+                            <span class="tag-pill">
+                                Apex
+                            </span>
+                            
+                            <span class="tag-pill">
+                                python
+                            </span>
+                            
+                            <span class="tag-pill">
+                                météo
+                            </span>
+                            
+                                
+                </div>
+                <h1 class="article-title">
+                    Surveillance météo
+                </h1>
+            </div>
+        </div>
+        <div class="right-pane article-content-wrapper">
+            <div class="article-content">
+                <h1 class="article-title-right">
+                    Surveillance météo
+                </h1>
+                <h1>Surveillance météo à Beauvais</h1>
+<p><strong>Construire un outil open source de prévision météorologique pour l’agriculture ?</strong></p>
+<p>Comment transformer des données météorologiques brutes en un tableau de bord interactif utile pour les décisions agricoles ? C’est la question centrale qui a structuré notre projet de fin de mineure numérique au sein de l’APEX. L’objectif n’était pas seulement de récupérer des données météo sur Beauvais, mais de les traiter, les modéliser et les restituer sous une forme lisible et actionnables — notamment pour anticiper les conditions favorables ou défavorables aux interventions phytosanitaires et culturales, tout en permettant une mise en perspective avec d’autres villes françaises.</p>
+<h2 id="La-demarche-technique">La démarche technique</h2>
+<p>Plutôt que de s’appuyer sur des données propriétaires, nous avons construit une chaîne de traitement entièrement open source à partir de l’API Open-Meteo. Nous avons conçu un pipeline structuré en trois grandes étapes :</p>
+<p>Un pré-traitement en Python (Jupyter) comprenant la collecte horaire des données sur quatre villes (Beauvais, Caen, Paris, Marseille), le nettoyage des valeurs manquantes et aberrantes, et l’enrichissement du jeu de données (amplitude thermique, indicateurs temporels).</p>
+<p>Un traitement par machine learning comparant trois modèles — régression linéaire, KNN et Random Forest — pour prédire la température et la probabilité de pluie à l’heure suivante. Le Random Forest s’est distingué comme le modèle le plus performant sur l’ensemble des métriques (MAE, RMSE, R²).</p>
+<p>Une visualisation interactive déployée via Streamlit et Plotly, intégrant carte géographique, tableau de bord par ville, comparaison multi-villes et accès aux données brutes nettoyées.</p>
+<h2 id="Le-resultat">Le résultat</h2>
+<p>Plus qu’un simple affichage météo, ce projet aboutit à un véritable outil d’aide à la décision agricole. Les visualisations permettent d’identifier les heures de gel potentiel, de respecter le seuil réglementaire de 19 km/h pour les traitements phytosanitaires, ou encore d’anticiper les épisodes à fort taux d’humidité favorables aux maladies fongiques. La comparaison entre villes offre une lecture territoriale des conditions climatiques sur une fenêtre de sept jours.</p>
+<p><img src="/2026/04/10/Surveillance-meteo/a.jpg" alt=""></p>
+<hr>
+<h2 id="Remerciements">Remerciements</h2>
+<p>Un grand merci à <strong>Jizhen CAI</strong> pour son accompagnement tout au long du projet — que ce soit dans l’organisation du travail, le suivi des avancées ou les conseils méthodologiques. Son soutien constant nous a permis de structurer notre démarche avec rigueur et de mener ce projet à bien dans les meilleures conditions.</p>
+<p><em>Écrit par Celine PENOT, Sascha DEFEBVIN, Maya MINAEV, Maxence CHARLES</em></p>
+
+            </div>
+            
+                <div class="article-author-block">
+                    
+                        
+                                <div class="article-author">
+                                    <p>Écrit par <a href="/author/Celine%20PENOT"><strong>
+                                                Celine PENOT
+                                            </strong></a></p>
+                                </div>
+                                
+                </div>
+                
+                    <div class="article-nav">
+                        <a href="/">← Retour à l'accueil</a>
+                    </div>
+        </div>
+</div>
+
+      <!-- Search Button & Modal -->
+      <div class="search-trigger" onclick="toggleSearch()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
+
+      <div id="search-overlay" class="search-overlay">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+          <div id="search-results"></div>
+          <button class="close-search" onclick="toggleSearch()">×</button>
+        </div>
+      </div>
+
+      <script src="/js/search.js"></script>
+
+  </div>
+</body>
+
+</html>

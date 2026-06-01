@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Projet Biomimétisme : peau de requin | 
+      Hexo
+  </title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,300..900;1,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Fallback for Libertinus if not locally available: using a similar Serif from Google Fonts for web consistency if needed, but defining the preferred stack -->
+  <!-- Note: We are prioritizing the user request for Libertinus Serif Display. -->
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div class="container">
+    <div class="split-screen post">
+    
+        <div class="left-pane" style="background-image: url('/2026/06/01/projet-biomimetisme-peau-de-requin/image1.jpg');">
+            <a href="/">
+                <img src="/img/logo-apex.png" class="home-logo" alt="Apex Home">
+            </a>
+            <div class="post-header-overlay">
+                <div class="post-tags">
+                    
+                        
+                            <span class="tag-pill">
+                                Biomimétisme
+                            </span>
+                            
+                            <span class="tag-pill">
+                                Projets
+                            </span>
+                            
+                                
+                </div>
+                <h1 class="article-title">
+                    Projet Biomimétisme : peau de requin
+                </h1>
+            </div>
+        </div>
+        <div class="right-pane article-content-wrapper">
+            <div class="article-content">
+                <h1 class="article-title-right">
+                    Projet Biomimétisme : peau de requin
+                </h1>
+                <h2 id="Contexte">Contexte</h2>
+<p>La peau de requin est recouverte de denticules cutanées aussi appelées <em>riblets</em> qui font environ 500 micromètres et ont une forme particulière créant des rainures à leur surface et des reliefs entre elles. Les rainures guident l’eau qui glisse sur la peau ce qui réduit les turbulences, tandis que les reliefs créent des micro-vortex qui collent l’eau à la peau limitant la dépression. Cette combinaison permet au requin de nager plus vite en dépensant moins d’énergie. Cette forme rugueuse et ces vortex ont aussi une propriété antibactérienne appelée <em>anti-fouling</em>.</p>
+<p><img src="/2026/06/01/projet-biomimetisme-peau-de-requin/image1.jpg" alt=""><br>
+<em>Structure microscopique des denticules cutanées (riblets) d’une peau de requin.</em></p>
+<h2 id="Modelisation">Modélisation</h2>
+<p>La modélisation 3D a été faite sur le logiciel <strong>Xgenerative Design</strong>. L’objectif a été de recréer des <em>riblets</em> de façon fidèle à la réalité tout en gardant la modification d’un nombre conséquent de paramètres contrôleurs pour pouvoir, à la simulation, tester pleins de tailles, formes, angles différents pour obtenir la forme avec le meilleur résultat possible sans avoir à recréer un nouveau modèle à chaque fois.</p>
+<p>Les paramètres contrôleurs que nous avons choisi de modifier pour nos simulations sont la forme des creux, et l’angle des <em>riblets</em>.</p>
+<p><img src="/2026/06/01/projet-biomimetisme-peau-de-requin/image2.jpeg" alt=""><br>
+<em>Modélisation 3D paramétrique des riblets sous Xgenerative Design.</em></p>
+<h2 id="Application-industrielle">Application industrielle</h2>
+<p>Nous avons imaginé deux concepts où ce revêtement « peau de requin » pourrait avoir une réelle efficacité dans des produits artificiels :</p>
+<ol>
+<li><strong>Un échangeur thermique</strong> : la capacité autonettoyante des <em>riblets</em> pourrait limiter l’encrassement des tuyaux, comme l’accumulation de calcaire.</li>
+<li><strong>L’aérodynamisme d’un javelot</strong> : dans le domaine du sport de haut niveau, chaque détail et amélioration compte.</li>
+</ol>
+<p>Aussi pour simplifier la mise en place à l’échelle industrielle, nous avons imaginé et conçu en 3D un modèle qui serait plus facile à fabriquer que des <em>riblets</em> (voir la photo ci-jointe) et où la symbiose entre création de vortex et guidage des flux serait respectée.</p>
+<p><img src="/2026/06/01/projet-biomimetisme-peau-de-requin/image3.png" alt=""><br>
+<em>Modélisation 3D du concept simplifié de riblets.</em></p>
+<p><img src="/2026/06/01/projet-biomimetisme-peau-de-requin/image4.jpeg" alt=""><br>
+<em>Détails géométriques du modèle simplifié pour la fabrication industrielle.</em></p>
+<h2 id="Simulation">Simulation</h2>
+<p>Nous avons utilisé le logiciel <strong>Fluent</strong> pour simuler un flux d’eau turbulent traversant le modèle à une vitesse de 10 m/s. Le but étant de voir l’impact que les différentes formes de <em>riblets</em> auraient sur les turbulences et les vortex formés.</p>
+<p>Nous avons pu constater ces vortex à la simulation, mais des limites logicielles nous ont empêché de tester toutes les formes que nous aurions souhaitées.</p>
+<p><img src="/2026/06/01/projet-biomimetisme-peau-de-requin/image5.png" alt=""><br>
+<em>Visualisation des vortex générés par la structure de la peau de requin.</em></p>
+<p><img src="/2026/06/01/projet-biomimetisme-peau-de-requin/image6.jpeg" alt=""><br>
+<em>Résultats des simulations de flux turbulent sous ANSYS Fluent.</em></p>
+
+            </div>
+            
+                <div class="article-author-block">
+                    
+                        
+                                <div class="article-author">
+                                    <p>Écrit par <a href="/author/Camille%20Caussel%20&%20Mathieu%20Pilat"><strong>
+                                                Camille Caussel &amp; Mathieu Pilat
+                                            </strong></a></p>
+                                </div>
+                                
+                </div>
+                
+                    <div class="article-nav">
+                        <a href="/">← Retour à l'accueil</a>
+                    </div>
+        </div>
+</div>
+
+      <!-- Search Button & Modal -->
+      <div class="search-trigger" onclick="toggleSearch()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
+
+      <div id="search-overlay" class="search-overlay">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+          <div id="search-results"></div>
+          <button class="close-search" onclick="toggleSearch()">×</button>
+        </div>
+      </div>
+
+      <script src="/js/search.js"></script>
+
+  </div>
+</body>
+
+</html>
