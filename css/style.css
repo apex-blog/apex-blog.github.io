@@ -204,8 +204,15 @@ a:hover {
 }
 
 .post-card .post-title {
-    font-size: 1.5rem;
+    font-family: var(--font-heading-article);
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.35;
     margin: 0;
+}
+
+.category-list .post-card .post-title {
+    font-size: 1.35rem;
 }
 
 /* Post Page */
